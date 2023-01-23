@@ -45,9 +45,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 888
+    x: 626
     y: 73
-    width: 576
+    width: 838
     height: 567
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
@@ -69,7 +69,7 @@ MonoBehaviour:
   m_UseMipMap: 0
   m_SimulatorState:
     controlPanelVisible: 1
-    controlPanelWidth: 50
+    controlPanelWidth: 165
     controlPanelFoldoutKeys:
     - UnityEditor.DeviceSimulation.ApplicationSettingsPlugin
     controlPanelFoldoutValues: 01
@@ -77,7 +77,7 @@ MonoBehaviour:
     - UnityEditor.DeviceSimulation.ApplicationSettingsPlugin
     pluginStates:
     - '{}'
-    scale: 16
+    scale: 20
     fitToScreenEnabled: 1
     rotationDegree: 270
     highlightSafeAreaEnabled: 0
@@ -192,9 +192,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 945f0000
-      m_LastClickedID: 24468
-      m_ExpandedIDs: b8fbfdffbc02feffb806feff520dfeffe816feff1621feff9c2afeff6490ffffd0edffff9aeeffff0cf1ffff26fbffff7c5f0000845f00009c5f0000
+      m_SelectedIDs: 7c5f0000
+      m_LastClickedID: 24444
+      m_ExpandedIDs: ee5bfdffb8fbfdffbc02feff520dfeffe816feff1621feff9c2afeff6490ffffd0edffff9aeeffff0cf1ffff26fbffff7c5f0000845f00009c5f0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -235,7 +235,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 388
     y: 0
-    width: 500
+    width: 238
     height: 588
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
@@ -266,7 +266,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 388
     y: 73
-    width: 498
+    width: 236
     height: 567
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
@@ -364,7 +364,7 @@ MonoBehaviour:
       containerId: overlay-container--right
       floating: 0
       collapsed: 0
-      displayed: 0
+      displayed: 1
       snapOffset: {x: 0, y: 0}
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
@@ -524,9 +524,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 1480, y: 720, z: 0}
+    m_Target: {x: 673.56854, y: 776.5139, z: -5.034851}
     speed: 2
-    m_Value: {x: 1480, y: 720, z: 0}
+    m_Value: {x: 673.56854, y: 776.5139, z: -5.034851}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -575,11 +575,11 @@ MonoBehaviour:
   m_Rotation:
     m_Target: {x: 0.02218747, y: 0.009594715, z: 0.00021291988, w: -0.9997086}
     speed: 2
-    m_Value: {x: 0.02218745, y: 0.009594707, z: 0.00021291971, w: -0.99970776}
+    m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 141.42136
+    m_Target: 1071.608
     speed: 2
-    m_Value: 141.42136
+    m_Value: 1025.4623
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -619,9 +619,9 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 888
+    x: 626
     y: 0
-    width: 578
+    width: 840
     height: 588
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
@@ -640,7 +640,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: ConsoleWindow
+  m_Name: ProjectBrowser
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -649,14 +649,14 @@ MonoBehaviour:
     y: 588
     width: 1466
     height: 359
-  m_MinSize: {x: 100, y: 100}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_ActualView: {fileID: 12}
+  m_MinSize: {x: 231, y: 271}
+  m_MaxSize: {x: 10001, y: 10021}
+  m_ActualView: {fileID: 11}
   m_Panes:
   - {fileID: 11}
   - {fileID: 12}
-  m_Selected: 1
-  m_LastSelected: 0
+  m_Selected: 0
+  m_LastSelected: 1
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -698,22 +698,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts
+    - Assets/2D/vertigo_games_game_dev_demo_sprites/ui_items
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts
+  - Assets/2D/vertigo_games_game_dev_demo_sprites/ui_items
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\poyra\Documents\GitHub\FortuneWheelGame\FortuneWheelGame
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 08790000
-    m_LastClickedID: 30984
-    m_ExpandedIDs: 000000001c6000001e60000020600000226000002460000000ca9a3b
+    m_SelectedIDs: 5c600000
+    m_LastClickedID: 24668
+    m_ExpandedIDs: 000000001c6000001e600000206000002260000024600000566000008e37010000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -766,10 +766,10 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 945f0000
-    m_LastClickedInstanceID: 24468
-    m_HadKeyboardFocusLastEvent: 0
-    m_ExpandedInstanceIDs: c6230000d66b0000106c000010670000
+    m_SelectedInstanceIDs: 7c5f0000
+    m_LastClickedInstanceID: 24444
+    m_HadKeyboardFocusLastEvent: 1
+    m_ExpandedInstanceIDs: c6230000d66b0000106c0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

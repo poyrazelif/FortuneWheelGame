@@ -15,7 +15,7 @@ public class WheelInventory
 [System.Serializable]
 public class Prize
 {
-    public Sprite PrizeImage;
+    public PrizeData PrizeData;
     public int PrizeAmount;
     public int Probability;
 }
@@ -67,9 +67,23 @@ public class WheelConfigure : MonoBehaviour
         for (int i = 0; i < _prizeTexts.Length; i++)
         {
             _prizeTexts[i].text = "X" + currentWheelPrizes.prizes[i].PrizeAmount;
-            _prizeImages[i].sprite = currentWheelPrizes.prizes[i].PrizeImage;
+            _prizeImages[i].sprite = currentWheelPrizes.prizes[i].PrizeData.PrizeImage;
         }
         
     }
     
+}
+
+public enum PrizeTypes
+{
+    Cash,
+    Gold,
+    ConsGrenadeElectric,
+    ConsGrenadeM67,
+    ConsGrenadeSnowball,
+    ConsHealthshot2,
+    ConsHealthshot2Adrenaline,
+    ConsMedkitEaster,
+    ConsC4,
+    ConsGrenadeEmp,
 }

@@ -5,6 +5,5 @@ using UnityEngine;
 public class PrizeData : ScriptableObject
 {
     public Sprite PrizeImage;
-    public int PrizeAmount;
-    public float Probability;
+    public PrizeTypes PrizeType;
 }
