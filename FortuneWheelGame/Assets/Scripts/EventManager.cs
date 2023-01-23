@@ -18,7 +18,22 @@ public class EventManager : MonoBehaviour
     {
         onProductPanelSpawnedObj?.Invoke(gameObject);
     }*/
-   
+    public delegate void OnBombSelected();
+
+    public static event OnBombSelected BombSelected;
+
+    public delegate void OnPrizeSelected();
+
+    public static event OnPrizeSelected PrizeSelected;
+
+    public delegate void OnPassedNextLevel();
+
+    public static event OnPassedNextLevel PassedNextLevel;
+
+    public static void NextLevel()
+    {
+        PassedNextLevel?.Invoke();
+    }
 
     
 }

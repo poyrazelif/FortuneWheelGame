@@ -2,17 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class GameManager :Singleton<GameManager>
 {
-    // Start is called before the first frame update
-    void Start()
+    private int activeLevel=30;
+
+    public int ActiveLevel
     {
-        
+        get => activeLevel;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void IncreaseLevel()
     {
-        
+        activeLevel++;
+        EventManager.NextLevel();
+    }
+
+    public void ResetLevels()
+    {
+        activeLevel = 0;
     }
 }
