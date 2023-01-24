@@ -21,19 +21,9 @@ public class ZoneMapController : MonoBehaviour
         {
            _zoneTexts[i]= _content.transform.GetChild(i).GetComponentInChildren<TextMeshProUGUI>();
         }
-        ResetMapText();
-    }
 
-    public void Update()
-    {
-        if (Input.GetMouseButtonDown(0))
-        {
-            SnapToNext();
-        }
-        if (Input.GetMouseButtonDown(1))
-        { 
-            _scrollRect.horizontalNormalizedPosition = 0f;
-        }
+        EventManager.PassedNextLevel += SnapToNext;
+        ResetMapText();
     }
 
     public void SnapToNext()
@@ -46,17 +36,13 @@ public class ZoneMapController : MonoBehaviour
             {
                 if (_levelIndex == 16)
                 {
-            
                     _scrollRect.horizontalNormalizedPosition = 0;
                     _levelIndex = 6;
                     _tourCount++;
                     UpdateMapTexts();
                 }
             });
-        
     }
-
-   
 
     public void UpdateMapTexts()
     {

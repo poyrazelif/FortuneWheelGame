@@ -48,6 +48,7 @@ public class ObjectPool : Singleton<ObjectPool>
                 if (pool.pooledObjects.Contains(gameObject))
                 {
                     gameObject.transform.SetParent(transform);
+                    gameObject.transform.localScale=Vector3.one;
                     gameObject.SetActive(false);
                     return;
                 }
@@ -61,6 +62,7 @@ public class ObjectPool : Singleton<ObjectPool>
                 foreach (var poolObject in pool.pooledObjects)
                 {
                     poolObject.transform.SetParent(transform);
+                    poolObject.transform.localScale=Vector3.one;
                     poolObject.SetActive(false);
                 }
             }

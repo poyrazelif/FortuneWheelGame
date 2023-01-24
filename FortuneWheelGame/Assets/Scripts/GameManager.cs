@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameManager :Singleton<GameManager>
 {
-    private int activeLevel=30;
+    private int activeLevel=0;
 
     public int ActiveLevel
     {
