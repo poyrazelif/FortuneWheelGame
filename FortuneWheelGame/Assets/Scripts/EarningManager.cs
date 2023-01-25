@@ -33,6 +33,8 @@ public class EarningManager : Singleton<EarningManager>
         _objectPool = ObjectPool.Instance;
     }
 
+
+
     public void AddPrize(PrizeData prizeData,int amount)
     {
         foreach (var earning in Earnings)

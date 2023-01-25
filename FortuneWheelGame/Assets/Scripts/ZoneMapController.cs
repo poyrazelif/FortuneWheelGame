@@ -22,7 +22,11 @@ public class ZoneMapController : MonoBehaviour
            _zoneTexts[i]= _content.transform.GetChild(i).GetComponentInChildren<TextMeshProUGUI>();
         }
 
+        Debug.Log(_scrollRect.horizontalNormalizedPosition.ToString());
+
         EventManager.PassedNextLevel += SnapToNext;
+        EventManager.GameEnded += ResetMapText;
+        EventManager.GameEnded +=ResetMapPosition;
         ResetMapText();
     }
 
@@ -58,5 +62,10 @@ public class ZoneMapController : MonoBehaviour
         {
             _zoneTexts[i].text = (i+1).ToString();
         }
+    }
+
+    public void ResetMapPosition()
+    {
+        _scrollRect.horizontalNormalizedPosition = -0.5f;
     }
 }

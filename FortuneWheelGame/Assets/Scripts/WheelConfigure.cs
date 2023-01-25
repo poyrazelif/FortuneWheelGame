@@ -36,6 +36,8 @@ public class WheelConfigure : MonoBehaviour
     private void Start()
     {
         EventManager.PassedNextLevel += ConfigureWheel;
+        EventManager.GameEnded += ConfigureWheel;
+        
         _gameManager = GameManager.Instance;
         for (int i = 0; i < Prizes.transform.childCount; i++)
         {
@@ -48,6 +50,7 @@ public class WheelConfigure : MonoBehaviour
     private void ConfigureWheel()
     {
         int Level = _gameManager.ActiveLevel;
+        spinsParent.transform.rotation = Quaternion.Euler(Vector3.zero);
         
         Debug.Log(Level+"level");
         

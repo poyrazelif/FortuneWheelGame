@@ -18,22 +18,49 @@ public class EventManager : MonoBehaviour
     {
         onProductPanelSpawnedObj?.Invoke(gameObject);
     }*/
-    public delegate void OnBombSelected();
+    public delegate void OnGameEnd();
+    public static event OnGameEnd GameEnded;
 
-    public static event OnBombSelected BombSelected;
-
-    public delegate void OnPrizeSelected();
-
-    public static event OnPrizeSelected PrizeSelected;
+    public delegate void OnStartSpin();
+    public static event OnStartSpin SpinStarted;
 
     public delegate void OnPassedNextLevel();
-
     public static event OnPassedNextLevel PassedNextLevel;
-
+    
+    public delegate void OnCollectRequest();
+    public static event OnCollectRequest CollectRewardsRequest;
+    
+    public delegate void OnSpinFinish();
+    public static event OnSpinFinish SpinFinished;
+    
+    public static void GameEnd()
+    {
+        GameEnded?.Invoke();
+    }
+    
+    public static void SpinStartInvoke()
+    {
+        SpinStarted?.Invoke();
+    }
+    
     public static void NextLevel()
     {
         PassedNextLevel?.Invoke();
     }
+    
+    public static void CollectRequestInvoke()
+    {
+        CollectRewardsRequest?.Invoke();
+    }
+    
+    public static void SpinFinishInvoke()
+    {
+        SpinFinished?.Invoke();
+    }
+
+   
+    
+    
 
     
 }

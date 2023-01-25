@@ -24,17 +24,15 @@ public class SpinWheel : MonoBehaviour
         _wheelConfigure = GetComponentInParent<WheelConfigure>();
         _gameManager = GameManager.Instance;
         _firstItemPos = _wheelConfigure.Prizes.transform.GetChild(0).transform.position;
+        EventManager.SpinStarted += Spin;
     }
 
-    private void Update()
+    private void Spin()
     {
-        if (Input.touchCount > 0)
+        if (isStopped)
         {
-            if (Input.GetTouch(0).phase == TouchPhase.Began && isStopped)
-            {
-                GetRandomPrize();
-                spinCoroutine = StartCoroutine(nameof(CO_Spin));
-            }
+            GetRandomPrize();
+            spinCoroutine = StartCoroutine(nameof(CO_Spin));
         }
     }
 
@@ -122,7 +120,6 @@ public class SpinWheel : MonoBehaviour
         tempImage.transform.DOMove(targetPos, 1f).OnComplete((() =>
         {
             _gameManager.IncreaseLevel();
-            Debug.Log("aaaaaaaaaaaaafff");
             ObjectPool.Instance.Deposit(tempImage);
         }));
         
