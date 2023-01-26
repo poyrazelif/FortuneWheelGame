@@ -5,6 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using Random = UnityEngine.Random;
 using DG.Tweening;
+using Unity.Mathematics;
 using UnityEngine.UI;
 
 public class SpinWheel : MonoBehaviour
@@ -38,10 +39,9 @@ public class SpinWheel : MonoBehaviour
 
     private void GetRandomPrize()
     {
-        WheelInventory currentWheel = _wheelConfigure.WheelLevels[_gameManager.ActiveLevel];
+        WheelInventory currentWheel = _wheelConfigure.GetWheelPrizes(_gameManager.ActiveLevel);
         
         int randomNumber = Random.Range(0, 100);
-        Debug.Log(randomNumber+"randomnumber");
         int _probalitiyCount = 0;
         currentIndex = 0;
         
@@ -49,8 +49,7 @@ public class SpinWheel : MonoBehaviour
         {
             if (_probalitiyCount <= randomNumber && randomNumber <= currentWheel.prizes[i].Probability + _probalitiyCount)
             {
-                Debug.Log("gg");
-                    currentIndex = i;
+                currentIndex = i;
                 currentPrize= currentWheel.prizes[i];
                 break;
             }
@@ -97,8 +96,9 @@ public class SpinWheel : MonoBehaviour
             transform.Rotate(0, 0, 1);
             yield return new WaitForSeconds(1.5f * Time.deltaTime);
         }
-        
-        CollectPrize();
+
+        if (currentPrize.PrizeData.PrizeType != PrizeTypes.Death) CollectPrize(); 
+        else EventManager.BombSelectedInvoke(); 
         
         isStopped = true;
 
@@ -110,18 +110,21 @@ public class SpinWheel : MonoBehaviour
         
         tempImage.GetComponent<Image>().sprite = currentPrize.PrizeData.PrizeImage;
         tempImage.transform.parent = transform;
+        tempImage.transform.localScale = Vector3.one;
         tempImage.transform.position = _firstItemPos;
+        tempImage.transform.rotation= quaternion.Euler(Vector3.zero);
 
         EarningManager earningManager = EarningManager.Instance;
         earningManager.AddPrize(currentPrize.PrizeData,currentPrize.PrizeAmount);
         Vector3 targetPos = earningManager.LastUpdateChart.transform.position;
         
         tempImage.SetActive(true);
-        tempImage.transform.DOMove(targetPos, 1f).OnComplete((() =>
+        tempImage.transform.DOMove(targetPos, .5f).OnComplete((() =>
         {
             _gameManager.IncreaseLevel();
             ObjectPool.Instance.Deposit(tempImage);
         }));
+        
         
     }
     

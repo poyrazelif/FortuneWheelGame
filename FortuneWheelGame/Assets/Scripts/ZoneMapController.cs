@@ -21,9 +21,6 @@ public class ZoneMapController : MonoBehaviour
         {
            _zoneTexts[i]= _content.transform.GetChild(i).GetComponentInChildren<TextMeshProUGUI>();
         }
-
-        Debug.Log(_scrollRect.horizontalNormalizedPosition.ToString());
-
         EventManager.PassedNextLevel += SnapToNext;
         EventManager.GameEnded += ResetMapText;
         EventManager.GameEnded +=ResetMapPosition;

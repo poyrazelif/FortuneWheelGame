@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 40344a0f3e816e442bf6fc1187f38092, type: 3}
-  m_Name: Gold
+  m_Name: PrizeData_Cons_Grenade_Snowball
   m_EditorClassIdentifier: 
-  PrizeImage: {fileID: 21300000, guid: 231b2a622a16acd4aac8c075efbe8829, type: 3}
-  PrizeType: 1
+  PrizeImage: {fileID: 21300000, guid: 90574e430f799824bb28eada6404ed17, type: 3}
+  PrizeType: 4

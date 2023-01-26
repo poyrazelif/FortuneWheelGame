@@ -36,7 +36,9 @@ public class WheelConfigure : MonoBehaviour
     private void Start()
     {
         EventManager.PassedNextLevel += ConfigureWheel;
+        EventManager.PassedNextLevel += WheelAnim;
         EventManager.GameEnded += ConfigureWheel;
+        EventManager.Revived += ConfigureWheel;
         
         _gameManager = GameManager.Instance;
         for (int i = 0; i < Prizes.transform.childCount; i++)
@@ -51,27 +53,20 @@ public class WheelConfigure : MonoBehaviour
     {
         int Level = _gameManager.ActiveLevel;
         spinsParent.transform.rotation = Quaternion.Euler(Vector3.zero);
-        
-        Debug.Log(Level+"level");
-        
-        transform.DOScale(Vector3.one * 1 / 10, .3f).OnComplete(() =>
-        {
-            transform.DOScale(Vector3.one, .3f);
-        });
-        
+
         for (int i = 0; i < indicatorsParent.transform.childCount; i++)
         {
             indicatorsParent.transform.GetChild(i).gameObject.SetActive(false);
             spinsParent.transform.GetChild(i).gameObject.SetActive(false);
         }
 
-        if (Level % 30 == 0 && Level!=0)
+        if ((Level+1) % 30 == 0 )
         {
             indicatorsParent.transform.GetChild(2).gameObject.SetActive(true);
             spinsParent.transform.GetChild(2).gameObject.SetActive(true);
             spinButtons.transform.GetChild(2).gameObject.SetActive(true);
         }
-        else if (Level % 5 == 0&& Level!=0)
+        else if ((Level+1) % 5 == 0)
         {
             indicatorsParent.transform.GetChild(1).gameObject.SetActive(true);
             spinsParent.transform.GetChild(1).gameObject.SetActive(true);
@@ -83,7 +78,7 @@ public class WheelConfigure : MonoBehaviour
             spinButtons.transform.GetChild(0).gameObject.SetActive(true);
             
         }
-        WheelInventory currentWheelPrizes = WheelLevels[Level];
+        WheelInventory currentWheelPrizes = GetWheelPrizes(Level);
         
         for (int i = 0; i < _prizeTexts.Length; i++)
         {
@@ -92,11 +87,29 @@ public class WheelConfigure : MonoBehaviour
         }
     }
 
+    public void WheelAnim()
+    {
+        transform.DOPunchScale(Vector3.one*0.2f, .5f);
+    }
+
     public void CloseSpinButtons()
     {
         for (int i = 0; i < spinButtons.transform.childCount; i++)
         {
             spinButtons.transform.GetChild(i).gameObject.SetActive(false);
+        }
+    }
+
+    public WheelInventory GetWheelPrizes(int Level)
+    {
+        if (Level >= WheelLevels.Count)
+        {
+            int equalLevel = Level % WheelLevels.Count;
+            return WheelLevels[equalLevel];
+        }
+        else
+        {
+            return WheelLevels[Level];
         }
     }
 }
@@ -113,4 +126,5 @@ public enum PrizeTypes
     ConsMedkitEaster,
     ConsC4,
     ConsGrenadeEmp,
+    Death,
 }

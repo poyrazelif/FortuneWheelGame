@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -31,6 +32,7 @@ public class EarningManager : Singleton<EarningManager>
     private void Start()
     {
         _objectPool = ObjectPool.Instance;
+        EventManager.GameEnded += ResetEarnings;
     }
 
 
@@ -56,6 +58,7 @@ public class EarningManager : Singleton<EarningManager>
     {
         GameObject newChart= _objectPool.GetFromPool("EarningChart");
         newChart.transform.parent =transform;
+        newChart.transform.localScale=Vector3.one;
         newChart.transform.position=startChartPos.position;
         lastUpdatedChart = newChart;
         
@@ -80,11 +83,28 @@ public class EarningManager : Singleton<EarningManager>
         for (int i = 0; i < Earnings.Count; i++)
         {
             Earnings[i].EarningChart.transform.position = new Vector3(startChartPos.transform.position.x,
-                startChartPos.transform.position.y - (i * (listSpace+100)),
+                startChartPos.transform.position.y - (i * (listSpace+50)),
                 startChartPos.transform.position.z);
             
            if(!Earnings[i].EarningChart.activeInHierarchy) 
                Earnings[i].EarningChart.SetActive(true);
+        }
+    }
+
+    private void ResetEarnings()
+    {
+        ClearPanel();
+        lastUpdatedChart = null;
+        Earnings.Clear();
+        SortList();
+        
+    }
+
+    private void ClearPanel()
+    {
+        foreach (var earning in Earnings)
+        {
+            _objectPool.Deposit(earning.EarningChart);
         }
     }
 }

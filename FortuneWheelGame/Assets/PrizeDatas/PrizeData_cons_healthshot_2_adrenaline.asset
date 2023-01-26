@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 40344a0f3e816e442bf6fc1187f38092, type: 3}
-  m_Name: Cash
+  m_Name: PrizeData_cons_healthshot_2_adrenaline
   m_EditorClassIdentifier: 
-  PrizeImage: {fileID: 21300000, guid: 776f03aa4a18fc84c87f522c880f1e26, type: 3}
-  PrizeType: 0
+  PrizeImage: {fileID: 21300000, guid: c6c1e66ed93916e4fb84ef5d9e9f2921, type: 3}
+  PrizeType: 6

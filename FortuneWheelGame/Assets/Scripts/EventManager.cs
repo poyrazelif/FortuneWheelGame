@@ -5,19 +5,6 @@ using UnityEngine;
 
 public class EventManager : MonoBehaviour
 {
-    //public static event Action<ProductData> onSelectedObjChanged;
-
-    //public static event Action<GameObject> onProductPanelSpawnedObj;
-
-    /*public static void SelectedObjectChanged(ProductData productData)
-    {
-        onSelectedObjChanged?.Invoke(productData);
-    }*/
-
-    /*public static void ProductPanelSpawnedObject(GameObject gameObject)
-    {
-        onProductPanelSpawnedObj?.Invoke(gameObject);
-    }*/
     public delegate void OnGameEnd();
     public static event OnGameEnd GameEnded;
 
@@ -32,6 +19,15 @@ public class EventManager : MonoBehaviour
     
     public delegate void OnSpinFinish();
     public static event OnSpinFinish SpinFinished;
+    
+    public delegate void OnBombSelected();
+    public static event OnBombSelected BombSelected;
+    
+    public delegate void OnMoneyChange();
+    public static event OnMoneyChange MoneyChanged;
+    
+    public delegate void OnRevive();
+    public static event OnRevive Revived;
     
     public static void GameEnd()
     {
@@ -57,6 +53,21 @@ public class EventManager : MonoBehaviour
     {
         SpinFinished?.Invoke();
     }
+    
+    public static void BombSelectedInvoke()
+    {
+        BombSelected?.Invoke();
+    }
+    
+    public static void MoneyChangedInvoke()
+    {
+        MoneyChanged?.Invoke();
+    }
+    public static void ReviveInvoke()
+    {
+        Revived?.Invoke();
+    }
+    
 
    
     

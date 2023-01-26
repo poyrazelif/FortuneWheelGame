@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using TMPro;
 
 public class GameManager :Singleton<GameManager>
 {
@@ -17,7 +18,7 @@ public class GameManager :Singleton<GameManager>
 
     [SerializeField] private GameObject _exitPanel;
     [SerializeField] private GameObject _bombPanel;
-
+    [SerializeField] private GameObject _collectPanel;
     public int ActiveLevel
     {
         get => activeLevel;
@@ -25,7 +26,10 @@ public class GameManager :Singleton<GameManager>
 
     private void Start()
     {
+        _exitButton.gameObject.SetActive(false);
         EventManager.PassedNextLevel += ExitButtonActivate;
+        EventManager.BombSelected += BombPanelActivate;
+        EventManager.CollectRewardsRequest += CollectPanelActivate;
     }
 
     private void OnValidate()
@@ -35,6 +39,7 @@ public class GameManager :Singleton<GameManager>
         _goBackButton.onClick.AddListener(GoBack);
         _spinButton.onClick.AddListener(StartSpin);
         _giveUpButton.onClick.AddListener(GiveUp);
+        _reviveButton.onClick.AddListener(Revive);
     }
 
     public void ExitGameRequest()
@@ -73,9 +78,51 @@ public class GameManager :Singleton<GameManager>
     {
         ResetLevels();
         EventManager.GameEnd();
-        _bombPanel.SetActive(false);
+        CloseBombPanel();
     }
-    
+
+    private void CloseBombPanel()
+    {
+        _bombPanel.transform.DOScale(Vector3.zero, .2f).OnComplete(() =>
+        {
+            _bombPanel.SetActive(false);
+        });
+    }
+
+    public void BombPanelActivate()
+    {
+        _bombPanel.transform.localScale = Vector3.zero;
+        _bombPanel.SetActive(true);
+        ReviveButtonCheckEnoughMoney();
+        _bombPanel.transform.DOScale(Vector3.one, .2f);
+        
+    } 
+    public void CollectPanelActivate()
+    {   
+        _exitPanel.SetActive(false);
+        _collectPanel.transform.localScale = Vector3.zero;
+        _collectPanel.SetActive(true);
+        _collectPanel.transform.DOScale(Vector3.one, .2f);
+    }
+
+    public void Revive()
+    {
+        EconomyManager.Instance.SpendMoney(20+ActiveLevel*10);
+        EventManager.ReviveInvoke();
+        CloseBombPanel();
+    }
+
+    public void ReviveButtonCheckEnoughMoney()
+    {
+        _reviveButton.gameObject.GetComponentInChildren<TextMeshProUGUI>().text = (20 + ActiveLevel * 10).ToString();
+        if (EconomyManager.Instance.CheckEnoughMoney(20 + ActiveLevel * 10))
+            _reviveButton.interactable = true;
+        else
+        {
+            _reviveButton.interactable = false;
+        }
+    }
+
 
     public void IncreaseLevel()
     {

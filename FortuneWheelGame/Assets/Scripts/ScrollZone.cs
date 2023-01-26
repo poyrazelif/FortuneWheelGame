@@ -21,7 +21,7 @@ public class ScrollZone : MonoBehaviour
          SnapToNext();
       }
       if (Input.GetMouseButtonDown(1))
-      { Debug.Log("sss");
+      { 
           _scrollRect.horizontalNormalizedPosition = 1;
       }
    }
