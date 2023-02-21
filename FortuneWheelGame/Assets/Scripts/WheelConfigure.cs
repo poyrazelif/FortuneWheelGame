@@ -31,7 +31,7 @@ public class WheelConfigure : MonoBehaviour
     
     private TextMeshProUGUI[] _prizeTexts = new TextMeshProUGUI[8];
     private Image[] _prizeImages = new Image[8];
-    private GameManager _gameManager;
+    private Sequence sequence;
 
     private void Start()
     {
@@ -40,7 +40,6 @@ public class WheelConfigure : MonoBehaviour
         EventManager.GameEnded += ConfigureWheel;
         EventManager.Revived += ConfigureWheel;
         
-        _gameManager = GameManager.Instance;
         for (int i = 0; i < Prizes.transform.childCount; i++)
         {
             _prizeTexts[i]= Prizes.transform.GetChild(i).GetComponentInChildren<TextMeshProUGUI>();
@@ -51,7 +50,7 @@ public class WheelConfigure : MonoBehaviour
 
     private void ConfigureWheel()
     {
-        int Level = _gameManager.ActiveLevel;
+        int Level = GameManager.Instance.ActiveLevel;
         spinsParent.transform.rotation = Quaternion.Euler(Vector3.zero);
 
         for (int i = 0; i < indicatorsParent.transform.childCount; i++)
@@ -89,7 +88,8 @@ public class WheelConfigure : MonoBehaviour
 
     public void WheelAnim()
     {
-        transform.DOPunchScale(Vector3.one*0.2f, .5f);
+        sequence = DOTween.Sequence();
+        sequence.Append(transform.DOPunchScale(Vector3.one * 0.2f, .5f));
     }
 
     public void CloseSpinButtons()

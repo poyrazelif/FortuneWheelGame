@@ -15,15 +15,13 @@ public class SpinWheel : MonoBehaviour
     [SerializeField] private Prize currentPrize;
     private bool isStopped = true;
     public float SecondSpeedDuration=1.1f;
-    public float spinPieceDuration=1.3f;
+    public float spinPieceDuration=1.2f;
     private Coroutine spinCoroutine;
-    private GameManager _gameManager;
     private Vector3 _firstItemPos;
 
     private void Start()
     {
         _wheelConfigure = GetComponentInParent<WheelConfigure>();
-        _gameManager = GameManager.Instance;
         _firstItemPos = _wheelConfigure.Prizes.transform.GetChild(0).transform.position;
         EventManager.SpinStarted += Spin;
     }
@@ -39,7 +37,7 @@ public class SpinWheel : MonoBehaviour
 
     private void GetRandomPrize()
     {
-        WheelInventory currentWheel = _wheelConfigure.GetWheelPrizes(_gameManager.ActiveLevel);
+        WheelInventory currentWheel = _wheelConfigure.GetWheelPrizes(GameManager.Instance.ActiveLevel);
         
         int randomNumber = Random.Range(0, 100);
         int _probalitiyCount = 0;
@@ -67,34 +65,37 @@ public class SpinWheel : MonoBehaviour
         
         for (int j = 0; j < Random.Range(1, 3); j++)
         {
-            for (int i = 0; i < 90 ; i++)
+            for (int i = 0; i < 15 ; i++)
             {
-                transform.Rotate(0, 0, -4);
+                transform.Rotate(0, 0, -24);
                 yield return null;
             }
         }
 
-        for (int j = 0; j < Random.Range(1, 2); j++)
+        for (int j = 0; j < 1; j++)
         {
-            for (int i = 0; i < 180 ; i++)
+            for (int i = 0; i < 30 ; i++)
             {
-                transform.Rotate(0, 0, -2);
-                yield return new WaitForSeconds(SecondSpeedDuration * Time.deltaTime);
+                transform.Rotate(0, 0, -12);
+                //yield return new WaitForSeconds(SecondSpeedDuration * Time.deltaTime);
+                yield return null;
             }
         }
         
-        for (int i = 0; i < (currentIndex*45)+20; i++)
+        for (int i = 0; i < (currentIndex*15)+7; i++)
         {
-            transform.Rotate(0, 0, -1);
-            yield return new WaitForSeconds(spinPieceDuration*Time.deltaTime);
+            transform.Rotate(0, 0, -3);
+            yield return null;
+            //yield return new WaitForSeconds(spinPieceDuration*Time.deltaTime);
         }
         
-        yield return new WaitForSeconds(.2f);
+        yield return new WaitForSeconds(.1f);
 
-        for (int i = 0; i < 20; i++)
+        for (int i = 0; i < 7; i++)
         {
-            transform.Rotate(0, 0, 1);
-            yield return new WaitForSeconds(1.5f * Time.deltaTime);
+            transform.Rotate(0, 0, 3);
+            //yield return new WaitForSeconds(1.5f * Time.deltaTime);
+            yield return null;
         }
 
         if (currentPrize.PrizeData.PrizeType != PrizeTypes.Death) CollectPrize(); 
@@ -109,7 +110,7 @@ public class SpinWheel : MonoBehaviour
         GameObject tempImage = ObjectPool.Instance.GetFromPool("Image");
         
         tempImage.GetComponent<Image>().sprite = currentPrize.PrizeData.PrizeImage;
-        tempImage.transform.parent = transform;
+        tempImage.transform.SetParent(transform);
         tempImage.transform.localScale = Vector3.one;
         tempImage.transform.position = _firstItemPos;
         tempImage.transform.rotation= quaternion.Euler(Vector3.zero);
@@ -121,7 +122,7 @@ public class SpinWheel : MonoBehaviour
         tempImage.SetActive(true);
         tempImage.transform.DOMove(targetPos, .5f).OnComplete((() =>
         {
-            _gameManager.IncreaseLevel();
+            GameManager.Instance.IncreaseLevel();
             ObjectPool.Instance.Deposit(tempImage);
         }));
         

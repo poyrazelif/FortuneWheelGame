@@ -31,6 +31,7 @@ public class EventManager : MonoBehaviour
     
     public static void GameEnd()
     {
+        GameManager.Instance.ResetLevels();
         GameEnded?.Invoke();
     }
     
@@ -67,11 +68,4 @@ public class EventManager : MonoBehaviour
     {
         Revived?.Invoke();
     }
-    
-
-   
-    
-    
-
-    
 }

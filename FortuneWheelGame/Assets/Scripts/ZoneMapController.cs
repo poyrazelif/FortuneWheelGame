@@ -30,7 +30,6 @@ public class ZoneMapController : MonoBehaviour
     public void SnapToNext()
     {   
         _levelIndex++;
-        DOTween.CompleteAll();
         float targetValue =_scrollRect.horizontalNormalizedPosition + .1f;
         DOTween.To(()=> _scrollRect.horizontalNormalizedPosition, x=> _scrollRect.horizontalNormalizedPosition = x, targetValue, .5f).OnComplete(
             () =>

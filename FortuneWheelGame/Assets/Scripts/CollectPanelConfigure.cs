@@ -14,7 +14,7 @@ public class CollectPanelConfigure : MonoBehaviour
     [SerializeField] private TextMeshProUGUI cardAmountText;
     [SerializeField] private Image cardPrizeImage;
     [SerializeField] private GameObject card;
-    private float showTime=2;
+    private float showTime=.5f;
     private bool canPass=true;
     private int sortNum=0;
     private Coroutine waitCoroutine;
@@ -35,7 +35,7 @@ public class CollectPanelConfigure : MonoBehaviour
         if (Input.touchCount > 0&& canPass)
         {
             if(sortNum!=0)
-            CardCloseAnim();
+             CardCloseAnim();
             ConfigureCard();
             CardOpenAnim();
         }
@@ -86,9 +86,9 @@ public class CollectPanelConfigure : MonoBehaviour
         currentEarning = GetEarningInOrder();
         if (currentEarning == null)
         {
-            ClosePanel();
             EventManager.GameEnd();
-            
+            ClosePanel();
+
         }
         else
         {

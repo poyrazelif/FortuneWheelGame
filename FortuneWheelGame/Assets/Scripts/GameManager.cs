@@ -30,6 +30,13 @@ public class GameManager :Singleton<GameManager>
         EventManager.PassedNextLevel += ExitButtonActivate;
         EventManager.BombSelected += BombPanelActivate;
         EventManager.CollectRewardsRequest += CollectPanelActivate;
+        
+        _exitButton.onClick.AddListener(ExitGameRequest);
+        _collectRewardsButton.onClick.AddListener(CollectRewards);
+        _goBackButton.onClick.AddListener(GoBack);
+        _spinButton.onClick.AddListener(StartSpin);
+        _giveUpButton.onClick.AddListener(GiveUp);
+        _reviveButton.onClick.AddListener(Revive);
     }
 
     private void OnValidate()

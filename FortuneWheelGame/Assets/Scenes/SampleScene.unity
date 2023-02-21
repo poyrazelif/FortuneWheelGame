@@ -773,7 +773,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 586657705045101709, guid: fbd8901eba196de4899be6183ca4eaab, type: 3}
       propertyPath: listSpace
-      value: 25
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 586657705045101710, guid: fbd8901eba196de4899be6183ca4eaab, type: 3}
       propertyPath: m_Pivot.x
@@ -1116,11 +1116,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 783988112, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
       propertyPath: spinPieceDuration
-      value: 0.5
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 783988112, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
       propertyPath: SecondSpeedDuration
-      value: 0.25
+      value: 1.1
       objectReference: {fileID: 0}
     - target: {fileID: 1051451979103085377, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
       propertyPath: m_Name
@@ -1636,7 +1636,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
       propertyPath: WheelLevels.Array.data[3].prizes.Array.data[2].Probability
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
       propertyPath: WheelLevels.Array.data[3].prizes.Array.data[3].PrizeAmount
@@ -1644,7 +1644,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
       propertyPath: WheelLevels.Array.data[3].prizes.Array.data[3].Probability
-      value: 40
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
       propertyPath: WheelLevels.Array.data[3].prizes.Array.data[4].PrizeAmount
@@ -1668,7 +1668,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
       propertyPath: WheelLevels.Array.data[3].prizes.Array.data[6].Probability
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
       propertyPath: WheelLevels.Array.data[3].prizes.Array.data[7].PrizeAmount

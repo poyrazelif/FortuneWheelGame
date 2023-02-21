@@ -16,13 +16,13 @@ public class ScrollZone : MonoBehaviour
 
    public void Update()
    {
-      if (Input.GetMouseButtonDown(0))
+      if (Input.touchCount > 0)
       {
-         SnapToNext();
-      }
-      if (Input.GetMouseButtonDown(1))
-      { 
-          _scrollRect.horizontalNormalizedPosition = 1;
+         Touch touch = Input.GetTouch(0);
+         if (touch.phase == TouchPhase.Began)
+         {
+            SnapToNext();
+         }
       }
    }
 

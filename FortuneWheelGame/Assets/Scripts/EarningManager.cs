@@ -19,9 +19,9 @@ public class Earning
 public class EarningManager : Singleton<EarningManager>
 {
     public List<Earning> Earnings = new List<Earning>();
-    private ObjectPool _objectPool;
     [SerializeField] private RectTransform startChartPos;
     [SerializeField] private int listSpace;
+    public float earningChartSize=0;
 
     private GameObject lastUpdatedChart;
     public GameObject LastUpdateChart
@@ -31,7 +31,6 @@ public class EarningManager : Singleton<EarningManager>
 
     private void Start()
     {
-        _objectPool = ObjectPool.Instance;
         EventManager.GameEnded += ResetEarnings;
     }
 
@@ -56,8 +55,12 @@ public class EarningManager : Singleton<EarningManager>
 
     public void CreateChart(PrizeData prizeData,int amount)
     {
-        GameObject newChart= _objectPool.GetFromPool("EarningChart");
-        newChart.transform.parent =transform;
+        GameObject newChart= ObjectPool.Instance.GetFromPool("EarningChart");
+        
+        if (earningChartSize == 0)
+        { earningChartSize = newChart.GetComponent<RectTransform>().sizeDelta.y; }
+        
+        newChart.transform.SetParent(transform);
         newChart.transform.localScale=Vector3.one;
         newChart.transform.position=startChartPos.position;
         lastUpdatedChart = newChart;
@@ -82,11 +85,11 @@ public class EarningManager : Singleton<EarningManager>
     {
         for (int i = 0; i < Earnings.Count; i++)
         {
-            Earnings[i].EarningChart.transform.position = new Vector3(startChartPos.transform.position.x,
-                startChartPos.transform.position.y - (i * (listSpace+50)),
-                startChartPos.transform.position.z);
+            Earnings[i].EarningChart.transform.position = startChartPos.transform.position;
+            Earnings[i].EarningChart.transform.position -= new Vector3(0,
+                i * (earningChartSize ), 0);
             
-           if(!Earnings[i].EarningChart.activeInHierarchy) 
+            if(!Earnings[i].EarningChart.activeInHierarchy) 
                Earnings[i].EarningChart.SetActive(true);
         }
     }
@@ -104,7 +107,7 @@ public class EarningManager : Singleton<EarningManager>
     {
         foreach (var earning in Earnings)
         {
-            _objectPool.Deposit(earning.EarningChart);
+            ObjectPool.Instance.Deposit(earning.EarningChart);
         }
     }
 }
