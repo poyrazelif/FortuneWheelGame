@@ -7,17 +7,18 @@ This is a fortune wheel game prototype developed with Unity 2021.3.15f1 .
 
    Basically;
 
-   User spins the wheel at each new level and earns predetermined prizes.  Except Silver and Gold Wheel Levels every level has a one bomb card. 
+  - User spins the wheel at each new level and earns predetermined prizes.  Except Silver and Gold Wheel Levels every level has a one bomb card. 
 
-   If the wheel hitted the bomb and user hasnt enough money to revive yourself, user lose all earnings. If the user revive yourself   game continue where it left off. 
+  - If the wheel hitted the bomb and user hasnt enough money to revive yourself, user lose all earnings. If the user revive yourself   game continue where it left off. 
 
-   If user don't want to take risks anymore. He/She can leave the game with his/her earning prizes by pressing the EXIT button then earned money added his/her safe.
+  - If user don't want to take risks anymore. He/She can leave the game with his/her earning prizes by pressing the EXIT button then earned money added his/her safe.
 
-   - In terms of game design, the types of prizes at each level and their probability of hit are kept changeable.
+
+  In terms of game design, the types of prizes at each level and their probability of hit are kept changeable.
    
-   - Prototype is compatible with different aspects : 20:9 , 16:9 , 4:3
+  Prototype is compatible with different aspects : 20:9 , 16:9 , 4:3
    
-   - Scriptable objects, Dotween, Sprite Atlas are used.
+  Scriptable objects, Dotween, Sprite Atlas are used.
    
    
    There is a video for "Exit with prizes" .
