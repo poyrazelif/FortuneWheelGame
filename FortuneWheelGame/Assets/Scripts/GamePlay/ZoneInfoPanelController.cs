@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using TMPro;
 using FortuneGame.Managers;
@@ -9,10 +10,15 @@ namespace FortuneGame.GamePlay
         [SerializeField] private TextMeshProUGUI _SafeZoneText;
         [SerializeField] private TextMeshProUGUI _SuperZoneText;
 
-        private void Start()
+        private void OnEnable()
         {
             EventManager.PassedNextLevel += UpdateTexts;
             EventManager.GameEnded += UpdateTexts;
+        }
+        private void OnDisable()
+        {
+            EventManager.PassedNextLevel -= UpdateTexts;
+            EventManager.GameEnded -= UpdateTexts;
         }
 
         public void UpdateTexts()

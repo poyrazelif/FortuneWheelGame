@@ -1,8 +1,10 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
 using FortuneGame.Managers;
+using Unity.VisualScripting;
 
 namespace FortuneGame.GamePlay
 {
@@ -23,10 +25,22 @@ namespace FortuneGame.GamePlay
                 _zoneTexts[i] = _content.transform.GetChild(i).GetComponentInChildren<TextMeshProUGUI>();
             }
 
+            
+            ResetMapText();
+        }
+
+        private void OnEnable()
+        {
             EventManager.PassedNextLevel += SnapToNext;
             EventManager.GameEnded += ResetMapText;
             EventManager.GameEnded += ResetMapPosition;
-            ResetMapText();
+        }
+
+        private void OnDisable()
+        {
+            EventManager.PassedNextLevel -= SnapToNext;
+            EventManager.GameEnded -= ResetMapText;
+            EventManager.GameEnded -= ResetMapPosition;
         }
 
         public void SnapToNext()

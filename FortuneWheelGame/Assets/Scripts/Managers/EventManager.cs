@@ -5,42 +5,32 @@ using UnityEngine;
 
 namespace FortuneGame.Managers
 {
-
-
     public class EventManager : MonoBehaviour
     {
         public delegate void OnGameEnd();
-
         public static event OnGameEnd GameEnded;
 
         public delegate void OnStartSpin();
-
         public static event OnStartSpin SpinStarted;
 
         public delegate void OnPassedNextLevel();
-
         public static event OnPassedNextLevel PassedNextLevel;
 
         public delegate void OnCollectRequest();
-
         public static event OnCollectRequest CollectRewardsRequest;
 
         public delegate void OnSpinFinish();
-
         public static event OnSpinFinish SpinFinished;
 
         public delegate void OnBombSelected();
-
         public static event OnBombSelected BombSelected;
 
         public delegate void OnMoneyChange();
-
         public static event OnMoneyChange MoneyChanged;
 
         public delegate void OnRevive();
-
         public static event OnRevive Revived;
-
+        
         public static void GameEnd()
         {
             GameManager.Instance.ResetLevels();

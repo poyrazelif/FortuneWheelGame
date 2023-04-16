@@ -27,7 +27,17 @@ namespace FortuneGame.GamePlay
         {
             _wheelConfigure = GetComponentInParent<WheelConfigure>();
             _firstItemPos = _wheelConfigure.Prizes.transform.GetChild(0).transform.position;
+           
+        }
+
+        private void OnEnable()
+        {
             EventManager.SpinStarted += Spin;
+        }
+
+        private void OnDisable()
+        {
+            EventManager.SpinStarted -= Spin;
         }
 
         private void Spin()

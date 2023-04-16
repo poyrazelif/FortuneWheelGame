@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using DG.Tweening;
@@ -20,16 +21,16 @@ namespace FortuneGame.GamePlay
         private bool canPass = true;
         private int sortNum = 0;
         private Coroutine waitCoroutine;
-
-        private void Start()
-        {
-            EventManager.GameEnded += ResetConfigurePanel;
-        }
-
+        
         private void OnEnable()
         {
+            EventManager.GameEnded += ResetConfigurePanel;
             canPass = true;
             ConfigureCard();
+        }
+        private void OnDisable()
+        {
+            EventManager.GameEnded -= ResetConfigurePanel;
         }
 
         private void Update()

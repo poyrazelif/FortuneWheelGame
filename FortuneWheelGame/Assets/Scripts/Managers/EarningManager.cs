@@ -17,7 +17,6 @@ namespace FortuneGame.Managers
         public GameObject EarningChart;
         public TextMeshProUGUI EarningText;
         public Image EarningImage;
-
     }
 
     public class EarningManager : Core.Singleton<EarningManager>
@@ -34,11 +33,15 @@ namespace FortuneGame.Managers
             get { return lastUpdatedChart; }
         }
 
-        private void Start()
+        private void OnEnable()
         {
             EventManager.GameEnded += ResetEarnings;
         }
 
+        private void OnDisable()
+        {
+            EventManager.GameEnded -= ResetEarnings;
+        }
 
 
         public void AddPrize(PrizeData prizeData, int amount)

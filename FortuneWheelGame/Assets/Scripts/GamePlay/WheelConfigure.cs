@@ -38,11 +38,6 @@ namespace FortuneGame.GamePlay
 
         private void Start()
         {
-            EventManager.PassedNextLevel += ConfigureWheel;
-            EventManager.PassedNextLevel += WheelAnim;
-            EventManager.GameEnded += ConfigureWheel;
-            EventManager.Revived += ConfigureWheel;
-
             for (int i = 0; i < Prizes.transform.childCount; i++)
             {
                 _prizeTexts[i] = Prizes.transform.GetChild(i).GetComponentInChildren<TextMeshProUGUI>();
@@ -50,6 +45,22 @@ namespace FortuneGame.GamePlay
             }
 
             ConfigureWheel();
+        }
+
+        private void OnEnable()
+        {
+            EventManager.PassedNextLevel += ConfigureWheel;
+            EventManager.PassedNextLevel += WheelAnim;
+            EventManager.GameEnded += ConfigureWheel;
+            EventManager.Revived += ConfigureWheel;
+        }
+
+        private void OnDisable()
+        {
+            EventManager.PassedNextLevel -= ConfigureWheel;
+            EventManager.PassedNextLevel -= WheelAnim;
+            EventManager.GameEnded -= ConfigureWheel;
+            EventManager.Revived -= ConfigureWheel;
         }
 
         private void ConfigureWheel()
