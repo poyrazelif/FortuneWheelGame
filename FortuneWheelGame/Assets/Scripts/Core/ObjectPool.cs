@@ -1,19 +1,22 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
-public class PoolObjects
+namespace FortuneGame.Core
 {
-    public string name;
-    public GameObject objectToPool;
-    public int poolCount;
-    
-    public List<GameObject> pooledObjects = new List<GameObject>();
-}
-public class ObjectPool : Singleton<ObjectPool>
-{
+    [System.Serializable]
+    public class PoolObjects
+    {
+        public string name;
+        public GameObject objectToPool;
+        public int poolCount;
+
+        public List<GameObject> pooledObjects = new List<GameObject>();
+    }
+
+    public class ObjectPool : Singleton<ObjectPool>
+    {
         public PoolObjects[] objects;
+
         public delegate void OnGetFromPool();
 
         void Awake()
@@ -38,6 +41,7 @@ public class ObjectPool : Singleton<ObjectPool>
                     }
                 }
             }
+
             return _objectToReturn;
         }
 
@@ -48,7 +52,7 @@ public class ObjectPool : Singleton<ObjectPool>
                 if (pool.pooledObjects.Contains(gameObject))
                 {
                     gameObject.transform.SetParent(transform);
-                    gameObject.transform.localScale=Vector3.one;
+                    gameObject.transform.localScale = Vector3.one;
                     gameObject.SetActive(false);
                     return;
                 }
@@ -62,11 +66,12 @@ public class ObjectPool : Singleton<ObjectPool>
                 foreach (var poolObject in pool.pooledObjects)
                 {
                     poolObject.transform.SetParent(transform);
-                    poolObject.transform.localScale=Vector3.one;
+                    poolObject.transform.localScale = Vector3.one;
                     poolObject.SetActive(false);
                 }
             }
         }
+
         private void InitializePool()
         {
             foreach (PoolObjects pool in objects)
@@ -80,4 +85,5 @@ public class ObjectPool : Singleton<ObjectPool>
                 }
             }
         }
+    }
 }
