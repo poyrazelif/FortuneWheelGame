@@ -194,9 +194,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: c4630000
-      m_LastClickedID: 25540
-      m_ExpandedIDs: bcc4feff18c5feffbccafeff2ae2feff86e2feff2ae8feff5a20ffffc820ffff6c26ffff2056ffff7c56ffff205cffff26bfffff7ec0ffff84d8ffffe0d8ffff84deffff7af8ffff3cf9ffff70f9ffff1afbffff20fbffffe2630000909100008aa2000008a300003e1a0100bc1a0100f44d0100d24f01005c8201003a840100
+      m_SelectedIDs: 50f9ffff
+      m_LastClickedID: -1712
+      m_ExpandedIDs: bcc4feff18c5feffbccafeff2ae2feff86e2feff2ae8feff5a20ffffc820ffff6c26ffff2056ffff7c56ffff205cffff26bfffff7ec0ffff84d8ffffe0d8ffff84deffff7af8ffff3cf9ffff50f9ffff70f9ffff1afbffff20fbffffe2630000909100008aa2000008a300003e1a0100bc1a0100f44d0100d24f01005c8201003a840100
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -881,9 +881,8 @@ MonoBehaviour:
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
     m_SaveData: []
-  m_ObjectsLockedBeforeSerialization:
-  - {fileID: 0}
-  m_InstanceIDsLockedBeforeSerialization: c4630000
+  m_ObjectsLockedBeforeSerialization: []
+  m_InstanceIDsLockedBeforeSerialization: 
   m_PreviewResizer:
     m_CachedPref: 151
     m_ControlHash: -371814159
@@ -893,5 +892,5 @@ MonoBehaviour:
   m_GlobalObjectId: 
   m_InspectorMode: 0
   m_LockTracker:
-    m_IsLocked: 1
+    m_IsLocked: 0
   m_PreviewWindow: {fileID: 0}

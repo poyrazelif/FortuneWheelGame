@@ -17,6 +17,10 @@ namespace FortuneGame.Managers
             [SerializeField] private Button giveUpButton;
             [SerializeField] private Button reviveButton;
 
+            private readonly float _panelOpenCloseDuration= .2f;
+            private readonly int _reviveButtonBasePrice= 20;
+            private readonly int _reviveButtonIncreaseFactor = 10;
+
             [FormerlySerializedAs("_exitPanel")] [SerializeField] private GameObject exitPanel;
             [FormerlySerializedAs("_bombPanel")] [SerializeField] private GameObject bombPanel;
             [FormerlySerializedAs("_collectPanel")] [SerializeField] private GameObject collectPanel;
@@ -62,13 +66,28 @@ namespace FortuneGame.Managers
                 giveUpButton=giveUpButton.GetComponent<Button>();
                 reviveButton=reviveButton.GetComponent<Button>();
             }
+            
+            public void IncreaseLevel()
+            {
+                activeLevel++;
+                EventManager.NextLevel();
+            }
 
-
-            public void ExitGameRequest()
+            public void ResetLevels()
+            {
+                activeLevel = 0;
+            }
+            
+            private void ExitButtonActivate()
+            {
+                exitButton.gameObject.SetActive(true);
+            }
+            
+            private void ExitGameRequest()
             {
                 exitPanel.transform.localScale = Vector3.zero;
                 exitPanel.SetActive(true);
-                exitPanel.transform.DOScale(Vector3.one, .2f);
+                exitPanel.transform.DOScale(Vector3.one, _panelOpenCloseDuration);
             }
 
             private void StartSpin()
@@ -77,15 +96,10 @@ namespace FortuneGame.Managers
                 EventManager.SpinStartInvoke();
             }
 
-            private void ExitButtonActivate()
-            {
-                exitButton.gameObject.SetActive(true);
-            }
-
             private void GoBack()
             {
-                exitPanel.transform.DOScale(Vector3.zero, .2f).OnComplete(() => { exitPanel.SetActive(false); });
-
+                exitPanel.transform.DOScale(Vector3.zero, _panelOpenCloseDuration).
+                    OnComplete(() => { exitPanel.SetActive(false); });
             }
 
             private void CollectRewards()
@@ -102,55 +116,43 @@ namespace FortuneGame.Managers
 
             private void CloseBombPanel()
             {
-                bombPanel.transform.DOScale(Vector3.zero, .2f).OnComplete(() => { bombPanel.SetActive(false); });
+                bombPanel.transform.DOScale(Vector3.zero, _panelOpenCloseDuration).
+                    OnComplete(() => { bombPanel.SetActive(false); });
             }
 
-            public void BombPanelActivate()
+            private void BombPanelActivate()
             {
                 bombPanel.transform.localScale = Vector3.zero;
                 bombPanel.SetActive(true);
                 ReviveButtonCheckEnoughMoney();
-                bombPanel.transform.DOScale(Vector3.one, .2f);
-
+                bombPanel.transform.DOScale(Vector3.one, _panelOpenCloseDuration);
             }
 
-            public void CollectPanelActivate()
+            private void CollectPanelActivate()
             {
                 exitPanel.SetActive(false);
                 collectPanel.transform.localScale = Vector3.zero;
                 collectPanel.SetActive(true);
-                collectPanel.transform.DOScale(Vector3.one, .2f);
+                collectPanel.transform.DOScale(Vector3.one, _panelOpenCloseDuration);
             }
 
-            public void Revive()
+            private void Revive()
             {
-                EconomyManager.Instance.SpendMoney(20 + ActiveLevel * 10);
+                EconomyManager.Instance.SpendMoney(GetReviveButtonPrice());
                 EventManager.ReviveInvoke();
                 CloseBombPanel();
             }
 
-            public void ReviveButtonCheckEnoughMoney()
+            private void ReviveButtonCheckEnoughMoney()
             {
                 reviveButton.gameObject.GetComponentInChildren<TextMeshProUGUI>().text =
-                    (20 + ActiveLevel * 10).ToString();
-                if (EconomyManager.Instance.CheckEnoughMoney(20 + ActiveLevel * 10))
-                    reviveButton.interactable = true;
-                else
-                {
-                    reviveButton.interactable = false;
-                }
+                    GetReviveButtonPrice().ToString();
+                reviveButton.interactable = EconomyManager.Instance.CheckEnoughMoney(GetReviveButtonPrice());
             }
 
-
-            public void IncreaseLevel()
+            private int GetReviveButtonPrice()
             {
-                activeLevel++;
-                EventManager.NextLevel();
-            }
-
-            public void ResetLevels()
-            {
-                activeLevel = 0;
+                return _reviveButtonBasePrice + ActiveLevel * _reviveButtonIncreaseFactor;
             }
 
 
