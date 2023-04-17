@@ -177,15 +177,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5e3868fac4eb6c4a81b320e4f063d3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _exitButton: {fileID: 1933654111}
-  _collectRewardsButton: {fileID: 40984339}
-  _goBackButton: {fileID: 554025199}
-  _spinButton: {fileID: 283764080}
-  _giveUpButton: {fileID: 657018422}
-  _reviveButton: {fileID: 1352359110}
-  _exitPanel: {fileID: 1410647305}
-  _bombPanel: {fileID: 1824177763}
-  _collectPanel: {fileID: 8461671544266760626}
+  exitButton: {fileID: 1933654111}
+  collectRewardsButton: {fileID: 40984339}
+  goBackButton: {fileID: 554025199}
+  spinButton: {fileID: 283764080}
+  giveUpButton: {fileID: 657018422}
+  reviveButton: {fileID: 1352359110}
+  exitPanel: {fileID: 1410647305}
+  bombPanel: {fileID: 1824177763}
+  collectPanel: {fileID: 8461671544266760626}
 --- !u!4 &178572295
 Transform:
   m_ObjectHideFlags: 0
@@ -214,7 +214,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objects:
-  - name: EarningChart
+  - name: EarningCard
     objectToPool: {fileID: 6786725485059765376, guid: c7cca609ab12ed74980ff80e87936ee2, type: 3}
     poolCount: 15
     pooledObjects: []

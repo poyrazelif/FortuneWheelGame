@@ -1,12 +1,10 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using FortuneGame.GamePlay;
 using FortuneGame.Core;
+using UnityEngine.Serialization;
 
 namespace FortuneGame.Managers
 {
@@ -14,25 +12,23 @@ namespace FortuneGame.Managers
     {
         public PrizeTypes EarningType;
         public int EarningTotalAmount;
-        public GameObject EarningChart;
+        
+        //UI
+        public GameObject EarningCard;
         public TextMeshProUGUI EarningText;
         public Image EarningImage;
     }
 
-    public class EarningManager : Core.Singleton<EarningManager>
+    public class EarningManager : Singleton<EarningManager>
     {
-        public List<Earning> Earnings = new List<Earning>();
-        [SerializeField] private RectTransform startChartPos;
-        [SerializeField] private int listSpace;
-        public float earningChartSize = 0;
-
-        private GameObject lastUpdatedChart;
-
-        public GameObject LastUpdateChart
-        {
-            get { return lastUpdatedChart; }
-        }
-
+        //[SerializeField] private int listSpace;
+        public List<Earning> Earnings = new();
+        private GameObject lastUpdatedCard;
+        public GameObject LastUpdateCard => lastUpdatedCard;
+        
+        [FormerlySerializedAs("startChartPos")] [SerializeField] private RectTransform cardSortStartPos;
+        [FormerlySerializedAs("earningChartSize")] [SerializeField]private float earningCardSize = 0;
+        
         private void OnEnable()
         {
             EventManager.GameEnded += ResetEarnings;
@@ -43,81 +39,81 @@ namespace FortuneGame.Managers
             EventManager.GameEnded -= ResetEarnings;
         }
 
-
         public void AddPrize(PrizeData prizeData, int amount)
         {
             foreach (var earning in Earnings)
             {
+                //Check if already have this earning
                 if (earning.EarningType == prizeData.PrizeType)
                 {
-                    lastUpdatedChart = earning.EarningChart;
+                    lastUpdatedCard = earning.EarningCard;
                     earning.EarningTotalAmount += amount;
                     earning.EarningText.text = earning.EarningTotalAmount.ToString();
                     return;
                 }
             }
-
-            CreateChart(prizeData, amount);
-
+            //if haven't this earning; create a new card
+            ConfigureNewCard(prizeData, amount);
         }
 
-        public void CreateChart(PrizeData prizeData, int amount)
+        private void ConfigureNewCard(PrizeData prizeData, int amount)
         {
-            GameObject newChart = ObjectPool.Instance.GetFromPool("EarningChart");
-
-            if (earningChartSize == 0)
+            GameObject newCard = GetNewCard();
+            Earning earning = new Earning
             {
-                earningChartSize = newChart.GetComponent<RectTransform>().sizeDelta.y;
-            }
-
-            newChart.transform.SetParent(transform);
-            newChart.transform.localScale = Vector3.one;
-            newChart.transform.position = startChartPos.position;
-            lastUpdatedChart = newChart;
-
-            Earning earning = new Earning();
-
-            earning.EarningChart = newChart;
-            earning.EarningImage = newChart.GetComponentInChildren<Image>();
-            earning.EarningText = newChart.GetComponentInChildren<TextMeshProUGUI>();
-            earning.EarningType = prizeData.PrizeType;
-            earning.EarningTotalAmount = amount;
-
+                EarningCard = newCard,
+                EarningImage = newCard.GetComponentInChildren<Image>(),
+                EarningText = newCard.GetComponentInChildren<TextMeshProUGUI>(),
+                EarningType = prizeData.PrizeType,
+                EarningTotalAmount = amount
+            };
             earning.EarningImage.sprite = prizeData.PrizeImage;
             earning.EarningText.text = earning.EarningTotalAmount.ToString();
-
             Earnings.Add(earning);
-            SortList();
-
+            SortCards();
         }
 
-        public void SortList()
+        private GameObject GetNewCard()
+        {
+            GameObject newCard = ObjectPool.Instance.GetFromPool("EarningCard");
+
+            if (earningCardSize == 0)
+                earningCardSize = 1.5f * newCard.GetComponent<RectTransform>().sizeDelta.y;
+            
+            newCard.transform.SetParent(transform);
+            newCard.transform.localScale = Vector3.one;
+            newCard.transform.position = cardSortStartPos.position;
+            
+            lastUpdatedCard = newCard;
+            return newCard;
+        }
+
+        private void SortCards()
         {
             for (int i = 0; i < Earnings.Count; i++)
             {
-                Earnings[i].EarningChart.transform.position = startChartPos.transform.position;
-                Earnings[i].EarningChart.transform.position -= new Vector3(0,
-                    i * (earningChartSize), 0);
+                Earnings[i].EarningCard.transform.position = cardSortStartPos.transform.position;
+                Earnings[i].EarningCard.transform.position -= new Vector3(0,
+                    i * (earningCardSize), 0);
 
-                if (!Earnings[i].EarningChart.activeInHierarchy)
-                    Earnings[i].EarningChart.SetActive(true);
+                if (!Earnings[i].EarningCard.activeInHierarchy)
+                    Earnings[i].EarningCard.SetActive(true);
             }
         }
 
         private void ResetEarnings()
         {
             ClearPanel();
-            lastUpdatedChart = null;
+            lastUpdatedCard = null;
             Earnings.Clear();
-            SortList();
-
+            SortCards();
         }
 
         private void ClearPanel()
         {
             foreach (var earning in Earnings)
             {
-                ObjectPool.Instance.Deposit(earning.EarningChart);
+                ObjectPool.Instance.Deposit(earning.EarningCard);
             }
         }
     }

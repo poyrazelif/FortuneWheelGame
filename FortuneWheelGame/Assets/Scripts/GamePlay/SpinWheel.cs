@@ -132,7 +132,7 @@ namespace FortuneGame.GamePlay
 
             EarningManager earningManager = EarningManager.Instance;
             earningManager.AddPrize(currentPrize.PrizeData, currentPrize.PrizeAmount);
-            Vector3 targetPos = earningManager.LastUpdateChart.transform.position;
+            Vector3 targetPos = earningManager.LastUpdateCard.transform.position;
 
             tempImage.SetActive(true);
             tempImage.transform.DOMove(targetPos, .5f).OnComplete((() =>
