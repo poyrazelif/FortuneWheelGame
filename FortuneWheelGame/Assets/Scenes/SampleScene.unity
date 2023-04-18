@@ -134,6 +134,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &53264361 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3462900336569278296, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+  m_PrefabInstance: {fileID: 1051451980159857558}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &76083064 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1051451980263744893, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+  m_PrefabInstance: {fileID: 1051451980159857558}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &123095643 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4646769254498688036, guid: 4fcbef266ea16014ca0316ff0547c176, type: 3}
+  m_PrefabInstance: {fileID: 238338712}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &178572292
 GameObject:
   m_ObjectHideFlags: 0
@@ -229,6 +244,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1294063293}
     m_Modifications:
+    - target: {fileID: 4646769254218923016, guid: 4fcbef266ea16014ca0316ff0547c176, type: 3}
+      propertyPath: scrollViewContent
+      value: 
+      objectReference: {fileID: 123095643}
     - target: {fileID: 4646769254218923026, guid: 4fcbef266ea16014ca0316ff0547c176, type: 3}
       propertyPath: m_Name
       value: Scrollview_ZoneMap
@@ -339,6 +358,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &346047796 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1051451980686911384, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+  m_PrefabInstance: {fileID: 1051451980159857558}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &384504649 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1051451980528735252, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+  m_PrefabInstance: {fileID: 1051451980159857558}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &406562615 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1051451980630257924, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+  m_PrefabInstance: {fileID: 1051451980159857558}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &406942940 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6626823299064289616, guid: ce355158f22e18440a9be1299e7401da, type: 3}
@@ -439,6 +473,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &612824831 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1051451979326512709, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+  m_PrefabInstance: {fileID: 1051451980159857558}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &657018422 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7441355476654064839, guid: 09c26cbbeb767aa4d8d483d277ff1e61, type: 3}
@@ -450,6 +489,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &844345622 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1051451980390142710, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+  m_PrefabInstance: {fileID: 1051451980159857558}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1110690471 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1051451980481557826, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+  m_PrefabInstance: {fileID: 1051451980159857558}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1294063292
 GameObject:
   m_ObjectHideFlags: 0
@@ -570,6 +619,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1365723784 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1051451980455970328, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+  m_PrefabInstance: {fileID: 1051451980159857558}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1410647305 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 804043411372043230, guid: 64ec3ff6ef450ea4db545f1b0bbd76c0, type: 3}
@@ -734,6 +788,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1698845991 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1051451979704650972, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+  m_PrefabInstance: {fileID: 1051451980159857558}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1824177763 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7441355475470021778, guid: 09c26cbbeb767aa4d8d483d277ff1e61, type: 3}
@@ -743,6 +802,11 @@ GameObject:
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7441355475470021781, guid: 09c26cbbeb767aa4d8d483d277ff1e61, type: 3}
   m_PrefabInstance: {fileID: 7441355477276347121}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1857633789 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1051451979793850685, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+  m_PrefabInstance: {fileID: 1051451980159857558}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &1933654111 stripped
 MonoBehaviour:
@@ -1215,12 +1279,120 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: SpinsParent
+      value: 
+      objectReference: {fileID: 1365723784}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
       propertyPath: arr.Array.size
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: PrizeTemplatesParent
+      value: 
+      objectReference: {fileID: 406562615}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelSkins.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
       propertyPath: WheelLevels.Array.size
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: WheelSkins.keys.Array.size
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: WheelSkins.values.Array.size
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelSkins.Array.data[0].SpinSkin
+      value: 
+      objectReference: {fileID: 346047796}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelSkins.Array.data[1].SpinSkin
+      value: 
+      objectReference: {fileID: 844345622}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelSkins.Array.data[2].SpinSkin
+      value: 
+      objectReference: {fileID: 76083064}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelSkins.Array.data[3].SpinSkin
+      value: 
+      objectReference: {fileID: 346047796}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelSkins.Array.data[0].IndicatorSkin
+      value: 
+      objectReference: {fileID: 612824831}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelSkins.Array.data[1].IndicatorSkin
+      value: 
+      objectReference: {fileID: 1110690471}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelSkins.Array.data[2].IndicatorSkin
+      value: 
+      objectReference: {fileID: 1698845991}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelSkins.Array.data[3].IndicatorSkin
+      value: 
+      objectReference: {fileID: 612824831}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelSkins.Array.data[0].SpinButtonSkin
+      value: 
+      objectReference: {fileID: 1857633789}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelSkins.Array.data[1].SpinButtonSkin
+      value: 
+      objectReference: {fileID: 1857633789}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelSkins.Array.data[2].SpinButtonSkin
+      value: 
+      objectReference: {fileID: 384504649}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelSkins.Array.data[3].SpinButtonSkin
+      value: 
+      objectReference: {fileID: 53264361}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelSkins.Array.data[0].SkinRepeatFactor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelSkins.Array.data[1].SkinRepeatFactor
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelSkins.Array.data[2].SkinRepeatFactor
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelSkins.Array.data[3].SkinRepeatFactor
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[0].prizes.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[1].prizes.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[2].prizes.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[3].prizes.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[4].prizes.Array.size
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
       propertyPath: WheelLevels.Array.data[0].prizes.Array.data[0].PrizeData
@@ -1442,6 +1614,166 @@ PrefabInstance:
       propertyPath: WheelLevels.Array.data[7].prizes.Array.data[6].PrizeData
       value: 
       objectReference: {fileID: 11400000, guid: 67b3296764aac3046afb631381f04c54, type: 2}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[0].prizes.Array.data[0].PrizeData
+      value: 
+      objectReference: {fileID: 11400000, guid: 3ef5cb54de525b04385c3f898e897097, type: 2}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[0].prizes.Array.data[1].PrizeData
+      value: 
+      objectReference: {fileID: 11400000, guid: 59c21f22a767e0f4f8ca28973de515b0, type: 2}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[0].prizes.Array.data[2].PrizeData
+      value: 
+      objectReference: {fileID: 11400000, guid: 086c0fbcafb8e964b87d603561af21ac, type: 2}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[0].prizes.Array.data[3].PrizeData
+      value: 
+      objectReference: {fileID: 11400000, guid: 2f19ccb71d830ab4c81ea8f87f2aad7c, type: 2}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[0].prizes.Array.data[4].PrizeData
+      value: 
+      objectReference: {fileID: 11400000, guid: 52e30ad55eb37c24888a5700a2152660, type: 2}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[0].prizes.Array.data[5].PrizeData
+      value: 
+      objectReference: {fileID: 11400000, guid: ef7471a22beedc147b740ee0cf4c4af1, type: 2}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[0].prizes.Array.data[6].PrizeData
+      value: 
+      objectReference: {fileID: 11400000, guid: 67b3296764aac3046afb631381f04c54, type: 2}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[0].prizes.Array.data[7].PrizeData
+      value: 
+      objectReference: {fileID: 11400000, guid: 3ef5cb54de525b04385c3f898e897097, type: 2}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[1].prizes.Array.data[0].PrizeData
+      value: 
+      objectReference: {fileID: 11400000, guid: 67b3296764aac3046afb631381f04c54, type: 2}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[1].prizes.Array.data[1].PrizeData
+      value: 
+      objectReference: {fileID: 11400000, guid: 0b41a11ba8be4b44cb3229900639f12d, type: 2}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[1].prizes.Array.data[2].PrizeData
+      value: 
+      objectReference: {fileID: 11400000, guid: 1a85b6f220a2653488532eb12a4308e1, type: 2}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[1].prizes.Array.data[3].PrizeData
+      value: 
+      objectReference: {fileID: 11400000, guid: ef7471a22beedc147b740ee0cf4c4af1, type: 2}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[1].prizes.Array.data[4].PrizeData
+      value: 
+      objectReference: {fileID: 11400000, guid: 52e30ad55eb37c24888a5700a2152660, type: 2}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[1].prizes.Array.data[5].PrizeData
+      value: 
+      objectReference: {fileID: 11400000, guid: 22f812bbb783c474f84bc4f7489110b0, type: 2}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[1].prizes.Array.data[6].PrizeData
+      value: 
+      objectReference: {fileID: 11400000, guid: 67b3296764aac3046afb631381f04c54, type: 2}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[1].prizes.Array.data[7].PrizeData
+      value: 
+      objectReference: {fileID: 11400000, guid: 3ef5cb54de525b04385c3f898e897097, type: 2}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[2].prizes.Array.data[0].PrizeData
+      value: 
+      objectReference: {fileID: 11400000, guid: 0b41a11ba8be4b44cb3229900639f12d, type: 2}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[2].prizes.Array.data[1].PrizeData
+      value: 
+      objectReference: {fileID: 11400000, guid: 2c3a8f19cfdd74c4e8404812772ac0ef, type: 2}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[2].prizes.Array.data[2].PrizeData
+      value: 
+      objectReference: {fileID: 11400000, guid: 086c0fbcafb8e964b87d603561af21ac, type: 2}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[2].prizes.Array.data[3].PrizeData
+      value: 
+      objectReference: {fileID: 11400000, guid: ef7471a22beedc147b740ee0cf4c4af1, type: 2}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[2].prizes.Array.data[4].PrizeData
+      value: 
+      objectReference: {fileID: 11400000, guid: 59c21f22a767e0f4f8ca28973de515b0, type: 2}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[2].prizes.Array.data[5].PrizeData
+      value: 
+      objectReference: {fileID: 11400000, guid: 3ef5cb54de525b04385c3f898e897097, type: 2}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[2].prizes.Array.data[6].PrizeData
+      value: 
+      objectReference: {fileID: 11400000, guid: 67b3296764aac3046afb631381f04c54, type: 2}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[2].prizes.Array.data[7].PrizeData
+      value: 
+      objectReference: {fileID: 11400000, guid: 3ef5cb54de525b04385c3f898e897097, type: 2}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[3].prizes.Array.data[0].PrizeData
+      value: 
+      objectReference: {fileID: 11400000, guid: 086c0fbcafb8e964b87d603561af21ac, type: 2}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[3].prizes.Array.data[1].PrizeData
+      value: 
+      objectReference: {fileID: 11400000, guid: 67b3296764aac3046afb631381f04c54, type: 2}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[3].prizes.Array.data[2].PrizeData
+      value: 
+      objectReference: {fileID: 11400000, guid: 0b41a11ba8be4b44cb3229900639f12d, type: 2}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[3].prizes.Array.data[3].PrizeData
+      value: 
+      objectReference: {fileID: 11400000, guid: ef7471a22beedc147b740ee0cf4c4af1, type: 2}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[3].prizes.Array.data[4].PrizeData
+      value: 
+      objectReference: {fileID: 11400000, guid: 0b41a11ba8be4b44cb3229900639f12d, type: 2}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[3].prizes.Array.data[5].PrizeData
+      value: 
+      objectReference: {fileID: 11400000, guid: 3ef5cb54de525b04385c3f898e897097, type: 2}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[3].prizes.Array.data[6].PrizeData
+      value: 
+      objectReference: {fileID: 11400000, guid: 67b3296764aac3046afb631381f04c54, type: 2}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[3].prizes.Array.data[7].PrizeData
+      value: 
+      objectReference: {fileID: 11400000, guid: 3ef5cb54de525b04385c3f898e897097, type: 2}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[4].prizes.Array.data[0].PrizeData
+      value: 
+      objectReference: {fileID: 11400000, guid: 0b41a11ba8be4b44cb3229900639f12d, type: 2}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[4].prizes.Array.data[1].PrizeData
+      value: 
+      objectReference: {fileID: 11400000, guid: 1a85b6f220a2653488532eb12a4308e1, type: 2}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[4].prizes.Array.data[2].PrizeData
+      value: 
+      objectReference: {fileID: 11400000, guid: 0b41a11ba8be4b44cb3229900639f12d, type: 2}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[4].prizes.Array.data[3].PrizeData
+      value: 
+      objectReference: {fileID: 11400000, guid: 2f19ccb71d830ab4c81ea8f87f2aad7c, type: 2}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[4].prizes.Array.data[4].PrizeData
+      value: 
+      objectReference: {fileID: 11400000, guid: 22f812bbb783c474f84bc4f7489110b0, type: 2}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[4].prizes.Array.data[5].PrizeData
+      value: 
+      objectReference: {fileID: 11400000, guid: 3ef5cb54de525b04385c3f898e897097, type: 2}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[4].prizes.Array.data[6].PrizeData
+      value: 
+      objectReference: {fileID: 11400000, guid: 67b3296764aac3046afb631381f04c54, type: 2}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[4].prizes.Array.data[7].PrizeData
+      value: 
+      objectReference: {fileID: 11400000, guid: 3ef5cb54de525b04385c3f898e897097, type: 2}
     - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
       propertyPath: WheelLevels.Array.data[0].prizes.Array.data[0].PrizeAmount
       value: 50
@@ -1869,6 +2201,334 @@ PrefabInstance:
     - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
       propertyPath: WheelLevels.Array.data[7].prizes.Array.data[7].Probability
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[0].prizes.Array.data[0].PrizeAmount
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[0].prizes.Array.data[0].Probability
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[0].prizes.Array.data[1].PrizeAmount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[0].prizes.Array.data[1].Probability
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[0].prizes.Array.data[2].PrizeAmount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[0].prizes.Array.data[2].Probability
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[0].prizes.Array.data[3].PrizeAmount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[0].prizes.Array.data[3].Probability
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[0].prizes.Array.data[4].PrizeAmount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[0].prizes.Array.data[4].Probability
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[0].prizes.Array.data[5].PrizeAmount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[0].prizes.Array.data[5].Probability
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[0].prizes.Array.data[6].PrizeAmount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[0].prizes.Array.data[6].Probability
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[0].prizes.Array.data[7].PrizeAmount
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[0].prizes.Array.data[7].Probability
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[1].prizes.Array.data[0].PrizeAmount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[1].prizes.Array.data[0].Probability
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[1].prizes.Array.data[1].PrizeAmount
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[1].prizes.Array.data[1].Probability
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[1].prizes.Array.data[2].PrizeAmount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[1].prizes.Array.data[2].Probability
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[1].prizes.Array.data[3].PrizeAmount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[1].prizes.Array.data[3].Probability
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[1].prizes.Array.data[4].PrizeAmount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[1].prizes.Array.data[4].Probability
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[1].prizes.Array.data[5].PrizeAmount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[1].prizes.Array.data[5].Probability
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[1].prizes.Array.data[6].PrizeAmount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[1].prizes.Array.data[6].Probability
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[1].prizes.Array.data[7].PrizeAmount
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[1].prizes.Array.data[7].Probability
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[2].prizes.Array.data[0].PrizeAmount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[2].prizes.Array.data[0].Probability
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[2].prizes.Array.data[1].PrizeAmount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[2].prizes.Array.data[1].Probability
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[2].prizes.Array.data[2].PrizeAmount
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[2].prizes.Array.data[2].Probability
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[2].prizes.Array.data[3].PrizeAmount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[2].prizes.Array.data[3].Probability
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[2].prizes.Array.data[4].PrizeAmount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[2].prizes.Array.data[4].Probability
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[2].prizes.Array.data[5].PrizeAmount
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[2].prizes.Array.data[5].Probability
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[2].prizes.Array.data[6].PrizeAmount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[2].prizes.Array.data[6].Probability
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[2].prizes.Array.data[7].PrizeAmount
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[2].prizes.Array.data[7].Probability
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[3].prizes.Array.data[0].PrizeAmount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[3].prizes.Array.data[0].Probability
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[3].prizes.Array.data[1].PrizeAmount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[3].prizes.Array.data[1].Probability
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[3].prizes.Array.data[2].PrizeAmount
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[3].prizes.Array.data[2].Probability
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[3].prizes.Array.data[3].PrizeAmount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[3].prizes.Array.data[3].Probability
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[3].prizes.Array.data[4].PrizeAmount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[3].prizes.Array.data[4].Probability
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[3].prizes.Array.data[5].PrizeAmount
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[3].prizes.Array.data[5].Probability
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[3].prizes.Array.data[6].PrizeAmount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[3].prizes.Array.data[6].Probability
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[3].prizes.Array.data[7].PrizeAmount
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[3].prizes.Array.data[7].Probability
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[4].prizes.Array.data[0].PrizeAmount
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[4].prizes.Array.data[0].Probability
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[4].prizes.Array.data[1].PrizeAmount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[4].prizes.Array.data[1].Probability
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[4].prizes.Array.data[2].PrizeAmount
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[4].prizes.Array.data[2].Probability
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[4].prizes.Array.data[3].PrizeAmount
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[4].prizes.Array.data[3].Probability
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[4].prizes.Array.data[4].PrizeAmount
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[4].prizes.Array.data[4].Probability
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[4].prizes.Array.data[5].PrizeAmount
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[4].prizes.Array.data[5].Probability
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[4].prizes.Array.data[6].PrizeAmount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[4].prizes.Array.data[6].Probability
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[4].prizes.Array.data[7].PrizeAmount
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051451979103085391, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: wheelLevels.Array.data[4].prizes.Array.data[7].Probability
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051451980630257924, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: m_Name
+      value: prize_templates_parent
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051451980686911384, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c0a4ab3fbef201a4bae58b2cf29761c5, type: 3}

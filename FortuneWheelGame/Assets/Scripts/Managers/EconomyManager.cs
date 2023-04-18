@@ -12,7 +12,6 @@ namespace FortuneGame.Managers
     public class EconomyManager : Singleton<EconomyManager>
     {
         [SerializeField] private TextMeshProUGUI currentMoneyText;
-
         private int CurrentMoney => PlayerPrefs.GetInt("CurrentMoney", 0);
 
         private void Start()

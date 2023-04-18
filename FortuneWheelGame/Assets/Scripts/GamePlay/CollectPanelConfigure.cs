@@ -13,14 +13,16 @@ namespace FortuneGame.GamePlay
     {
         private EarningManager _earningManager;
         private Earning currentEarning;
+        private float showTime = .5f;
+        private bool canPass = true;
+        private int sortNum;
+        private Coroutine waitCoroutine;
+        private float openCloseDuration = .2f;
         [SerializeField] private TextMeshProUGUI cardPrizeText;
         [SerializeField] private TextMeshProUGUI cardAmountText;
         [SerializeField] private Image cardPrizeImage;
         [SerializeField] private GameObject card;
-        private float showTime = .5f;
-        private bool canPass = true;
-        private int sortNum = 0;
-        private Coroutine waitCoroutine;
+       
         
         private void OnEnable()
         {
@@ -53,7 +55,7 @@ namespace FortuneGame.GamePlay
 
         public void ClosePanel()
         {
-            gameObject.transform.DOScale(Vector3.zero, .2f).OnComplete(() => { gameObject.SetActive(false); });
+            gameObject.transform.DOScale(Vector3.zero, openCloseDuration).OnComplete(() => { gameObject.SetActive(false); });
         }
 
         private Earning GetEarningInOrder()
@@ -63,14 +65,13 @@ namespace FortuneGame.GamePlay
             {
                 return _earningManager.Earnings[sortNum];
             }
-
             return null;
         }
 
         private void CardCloseAnim()
         {
             card.transform.localScale = Vector3.one;
-            card.transform.DOScale(Vector3.zero, .2f);
+            card.transform.DOScale(Vector3.zero, openCloseDuration);
         }
 
         private void CardOpenAnim()
@@ -79,7 +80,7 @@ namespace FortuneGame.GamePlay
                 StopCoroutine(waitCoroutine);
             waitCoroutine = StartCoroutine(CO_WaitTime());
             card.transform.localScale = Vector3.zero;
-            card.transform.DOScale(Vector3.one, .2f);
+            card.transform.DOScale(Vector3.one, openCloseDuration);
         }
 
 
@@ -90,7 +91,6 @@ namespace FortuneGame.GamePlay
             {
                 EventManager.GameEnd();
                 ClosePanel();
-
             }
             else
             {
@@ -98,7 +98,6 @@ namespace FortuneGame.GamePlay
                 {
                     EconomyManager.Instance.AddMoney(currentEarning.EarningTotalAmount);
                 }
-
                 cardPrizeImage.sprite = currentEarning.EarningImage.sprite;
                 cardPrizeText.text = currentEarning.EarningType.ToString();
                 cardAmountText.text = "x" + currentEarning.EarningTotalAmount;
@@ -111,11 +110,7 @@ namespace FortuneGame.GamePlay
             currentEarning = null;
             sortNum = 0;
             if (waitCoroutine != null)
-            {
                 StopCoroutine(waitCoroutine);
-            }
-
-            ;
             canPass = true;
         }
     }

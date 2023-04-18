@@ -1,11 +1,14 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using FortuneGame.Core;
 using FortuneGame.Managers;
+using UnityEngine.Serialization;
 
 namespace FortuneGame.GamePlay
 {
@@ -23,30 +26,38 @@ namespace FortuneGame.GamePlay
         public int Probability;
     }
 
+    [System.Serializable]
+    public class WheelSkin
+    {
+        public int SkinRepeatFactor;
+        public GameObject IndicatorSkin;
+        public GameObject SpinSkin;
+        public GameObject SpinButtonSkin;
+    }
+
     public class WheelConfigure : MonoBehaviour
     {
-        public GameObject Prizes;
-        public List<WheelInventory> WheelLevels = new List<WheelInventory>();
-        public GameObject spinsParent;
-
+        public GameObject PrizeTemplatesParent;
+        public GameObject SpinsParent;
+        
         [SerializeField] private GameObject indicatorsParent;
         [SerializeField] private GameObject spinButtons;
-
+        [SerializeField] private List<WheelInventory> wheelLevels = new();
+        [SerializeField] private List<WheelSkin> wheelSkins = new();
+        
         private TextMeshProUGUI[] _prizeTexts = new TextMeshProUGUI[8];
         private Image[] _prizeImages = new Image[8];
         private Sequence sequence;
-
+        private float wheelAnimPunchDuration=0.5f;
+        private float wheelAnimPunchPower=0.2f;
+        
+        
         private void Start()
         {
-            for (int i = 0; i < Prizes.transform.childCount; i++)
-            {
-                _prizeTexts[i] = Prizes.transform.GetChild(i).GetComponentInChildren<TextMeshProUGUI>();
-                _prizeImages[i] = Prizes.transform.GetChild(i).GetComponent<Image>();
-            }
-
+            ExtractTemplatePrizeComponents();
+            SortWheelSkins();
             ConfigureWheel();
         }
-
         private void OnEnable()
         {
             EventManager.PassedNextLevel += ConfigureWheel;
@@ -62,39 +73,59 @@ namespace FortuneGame.GamePlay
             EventManager.GameEnded -= ConfigureWheel;
             EventManager.Revived -= ConfigureWheel;
         }
+        private void ExtractTemplatePrizeComponents()
+        {
+            for (int i = 0; i < PrizeTemplatesParent.transform.childCount; i++)
+            {
+                _prizeTexts[i] = PrizeTemplatesParent.transform.GetChild(i).GetComponentInChildren<TextMeshProUGUI>();
+                _prizeImages[i] = PrizeTemplatesParent.transform.GetChild(i).GetComponent<Image>();
+            }
+        }
+
+        private void CloseAllWheel()
+        {
+            for (int i = 0; i < wheelSkins.Count; i++)
+            {
+                wheelSkins[i].IndicatorSkin.SetActive(false);
+                wheelSkins[i].SpinSkin.SetActive(false);
+                wheelSkins[i].SpinButtonSkin.SetActive(false);
+            }
+        }
+
+        private void SortWheelSkins()
+        {
+            WheelSkin temp;
+            for (int i = 0; i < wheelSkins.Count-1; i++)
+            {
+                for (int j = i; j < wheelSkins.Count; j++)
+                {
+                    if (wheelSkins[i].SkinRepeatFactor < wheelSkins[j].SkinRepeatFactor)
+                    {
+                        temp = wheelSkins[j];
+                        wheelSkins[j] = wheelSkins[i];
+                        wheelSkins[i] = temp;
+                    }
+                }
+            }
+        }
 
         private void ConfigureWheel()
         {
-            int Level = GameManager.Instance.ActiveLevel;
-            spinsParent.transform.rotation = Quaternion.Euler(Vector3.zero);
-
-            for (int i = 0; i < indicatorsParent.transform.childCount; i++)
+            int level = GameManager.Instance.ActiveLevel;
+            SpinsParent.transform.rotation = Quaternion.Euler(Vector3.zero);
+            CloseAllWheel();
+            
+            for (int i = 0; i < wheelSkins.Count; i++)
             {
-                indicatorsParent.transform.GetChild(i).gameObject.SetActive(false);
-                spinsParent.transform.GetChild(i).gameObject.SetActive(false);
+                if ((level + 1) % wheelSkins[i].SkinRepeatFactor == 0)
+                {
+                    wheelSkins[i].IndicatorSkin.SetActive(true);
+                    wheelSkins[i].SpinSkin.SetActive(true);
+                    wheelSkins[i].SpinButtonSkin.SetActive(true);
+                    break;
+                }
             }
-
-            if ((Level + 1) % 30 == 0)
-            {
-                indicatorsParent.transform.GetChild(2).gameObject.SetActive(true);
-                spinsParent.transform.GetChild(2).gameObject.SetActive(true);
-                spinButtons.transform.GetChild(2).gameObject.SetActive(true);
-            }
-            else if ((Level + 1) % 5 == 0)
-            {
-                indicatorsParent.transform.GetChild(1).gameObject.SetActive(true);
-                spinsParent.transform.GetChild(1).gameObject.SetActive(true);
-                spinButtons.transform.GetChild(0).gameObject.SetActive(true);
-            }
-            else
-            {
-                indicatorsParent.transform.GetChild(0).gameObject.SetActive(true);
-                spinsParent.transform.GetChild(0).gameObject.SetActive(true);
-                spinButtons.transform.GetChild(0).gameObject.SetActive(true);
-
-            }
-
-            WheelInventory currentWheelPrizes = GetWheelPrizes(Level);
+            WheelInventory currentWheelPrizes = GetWheelPrizes(level);
 
             for (int i = 0; i < _prizeTexts.Length; i++)
             {
@@ -106,7 +137,7 @@ namespace FortuneGame.GamePlay
         public void WheelAnim()
         {
             sequence = DOTween.Sequence();
-            sequence.Append(transform.DOPunchScale(Vector3.one * 0.2f, .5f));
+            sequence.Append(transform.DOPunchScale(Vector3.one * wheelAnimPunchPower, wheelAnimPunchDuration));
         }
 
         public void CloseSpinButtons()
@@ -119,15 +150,12 @@ namespace FortuneGame.GamePlay
 
         public WheelInventory GetWheelPrizes(int Level)
         {
-            if (Level >= WheelLevels.Count)
+            if (Level >= wheelLevels.Count)
             {
-                int equalLevel = Level % WheelLevels.Count;
-                return WheelLevels[equalLevel];
+                int equalLevel = Level % wheelLevels.Count;
+                return wheelLevels[equalLevel];
             }
-            else
-            {
-                return WheelLevels[Level];
-            }
+            return wheelLevels[Level];
         }
     }
 

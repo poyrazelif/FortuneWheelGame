@@ -2,13 +2,14 @@ using System;
 using UnityEngine;
 using TMPro;
 using FortuneGame.Managers;
+using UnityEngine.Serialization;
 
 namespace FortuneGame.GamePlay
 {
     public class ZoneInfoPanelController : MonoBehaviour
     {
-        [SerializeField] private TextMeshProUGUI _SafeZoneText;
-        [SerializeField] private TextMeshProUGUI _SuperZoneText;
+        [FormerlySerializedAs("_SafeZoneText")] [SerializeField] private TextMeshProUGUI safeZoneText;
+        [FormerlySerializedAs("_SuperZoneText")] [SerializeField] private TextMeshProUGUI superZoneText;
 
         private void OnEnable()
         {
@@ -25,8 +26,8 @@ namespace FortuneGame.GamePlay
         {
             int targetSafeLevel = (GameManager.Instance.ActiveLevel / 5 + 1) * 5;
             int targetSuperLevel = (GameManager.Instance.ActiveLevel / 30 + 1) * 30;
-            _SafeZoneText.text = "Safe Zone" + targetSafeLevel;
-            _SuperZoneText.text = "Super Zone" + targetSuperLevel;
+            safeZoneText.text = "Safe Zone" + targetSafeLevel;
+            superZoneText.text = "Super Zone" + targetSuperLevel;
         }
     }
 }

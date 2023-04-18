@@ -15,19 +15,16 @@ namespace FortuneGame.GamePlay
     public class SpinWheel : MonoBehaviour
     {
         private WheelConfigure _wheelConfigure;
-        [SerializeField] private int currentIndex;
-        [SerializeField] private Prize currentPrize;
+        private int currentIndex;
+        private Prize currentPrize;
         private bool isStopped = true;
-        public float SecondSpeedDuration = 1.1f;
-        public float spinPieceDuration = 1.2f;
         private Coroutine spinCoroutine;
         private Vector3 _firstItemPos;
-
+        
         private void Start()
         {
             _wheelConfigure = GetComponentInParent<WheelConfigure>();
-            _firstItemPos = _wheelConfigure.Prizes.transform.GetChild(0).transform.position;
-           
+            _firstItemPos = _wheelConfigure.PrizeTemplatesParent.transform.GetChild(0).transform.position;
         }
 
         private void OnEnable()
@@ -54,22 +51,19 @@ namespace FortuneGame.GamePlay
             WheelInventory currentWheel = _wheelConfigure.GetWheelPrizes(GameManager.Instance.ActiveLevel);
 
             int randomNumber = Random.Range(0, 100);
-            int _probalitiyCount = 0;
+            int probabilitiyCount = 0;
             currentIndex = 0;
 
             for (int i = 0; i < currentWheel.prizes.Length; i++)
             {
-                if (_probalitiyCount <= randomNumber &&
-                    randomNumber <= currentWheel.prizes[i].Probability + _probalitiyCount)
+                if (probabilitiyCount <= randomNumber &&
+                    randomNumber <= currentWheel.prizes[i].Probability + probabilitiyCount)
                 {
                     currentIndex = i;
                     currentPrize = currentWheel.prizes[i];
                     break;
                 }
-                else
-                {
-                    _probalitiyCount += currentWheel.prizes[i].Probability;
-                }
+                probabilitiyCount += currentWheel.prizes[i].Probability;
             }
         }
 
@@ -92,7 +86,6 @@ namespace FortuneGame.GamePlay
                 for (int i = 0; i < 30; i++)
                 {
                     transform.Rotate(0, 0, -12);
-                    //yield return new WaitForSeconds(SecondSpeedDuration * Time.deltaTime);
                     yield return null;
                 }
             }
@@ -101,7 +94,6 @@ namespace FortuneGame.GamePlay
             {
                 transform.Rotate(0, 0, -3);
                 yield return null;
-                //yield return new WaitForSeconds(spinPieceDuration*Time.deltaTime);
             }
 
             yield return new WaitForSeconds(.1f);
@@ -109,7 +101,6 @@ namespace FortuneGame.GamePlay
             for (int i = 0; i < 7; i++)
             {
                 transform.Rotate(0, 0, 3);
-                //yield return new WaitForSeconds(1.5f * Time.deltaTime);
                 yield return null;
             }
 
@@ -140,8 +131,6 @@ namespace FortuneGame.GamePlay
                 GameManager.Instance.IncreaseLevel();
                 ObjectPool.Instance.Deposit(tempImage);
             }));
-
-
         }
 
 

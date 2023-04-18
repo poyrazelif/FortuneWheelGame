@@ -5,30 +5,28 @@ using UnityEngine.UI;
 using DG.Tweening;
 using FortuneGame.Managers;
 using Unity.VisualScripting;
+using UnityEngine.Serialization;
 
 namespace FortuneGame.GamePlay
 {
     public class ZoneMapController : MonoBehaviour
     {
+        [SerializeField] private GameObject scrollViewContent;
+        private readonly TextMeshProUGUI[] _zoneTexts = new TextMeshProUGUI[21];
         private ScrollRect _scrollRect;
-        [SerializeField] private GameObject _content;
-        [SerializeField] private float scrollSnapAmount;
-        [SerializeField] private TextMeshProUGUI[] _zoneTexts = new TextMeshProUGUI[21];
         private int _levelIndex = 1;
-        private int _tourCount = 0;
-
+        private int _tourCount;
+        
         private void Start()
         {
             _scrollRect = GetComponent<ScrollRect>();
-            for (int i = 0; i < _content.transform.childCount; i++)
+            for (int i = 0; i < scrollViewContent.transform.childCount; i++)
             {
-                _zoneTexts[i] = _content.transform.GetChild(i).GetComponentInChildren<TextMeshProUGUI>();
+                _zoneTexts[i] = scrollViewContent.transform.GetChild(i).GetComponentInChildren<TextMeshProUGUI>();
             }
-
-            
             ResetMapText();
         }
-
+        
         private void OnEnable()
         {
             EventManager.PassedNextLevel += SnapToNext;
@@ -47,17 +45,16 @@ namespace FortuneGame.GamePlay
         {
             _levelIndex++;
             float targetValue = _scrollRect.horizontalNormalizedPosition + .1f;
+            
             DOTween.To(() => _scrollRect.horizontalNormalizedPosition,
                 x => _scrollRect.horizontalNormalizedPosition = x, targetValue, .5f).OnComplete(
                 () =>
                 {
-                    if (_levelIndex == 16)
-                    {
-                        _scrollRect.horizontalNormalizedPosition = 0;
-                        _levelIndex = 6;
-                        _tourCount++;
-                        UpdateMapTexts();
-                    }
+                    if (_levelIndex != 16) return;
+                    _scrollRect.horizontalNormalizedPosition = 0;
+                    _levelIndex = 6;
+                    _tourCount++;
+                    UpdateMapTexts();
                 });
         }
 

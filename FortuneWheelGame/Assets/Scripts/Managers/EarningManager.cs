@@ -12,8 +12,6 @@ namespace FortuneGame.Managers
     {
         public PrizeTypes EarningType;
         public int EarningTotalAmount;
-        
-        //UI
         public GameObject EarningCard;
         public TextMeshProUGUI EarningText;
         public Image EarningImage;
@@ -21,7 +19,6 @@ namespace FortuneGame.Managers
 
     public class EarningManager : Singleton<EarningManager>
     {
-        //[SerializeField] private int listSpace;
         public List<Earning> Earnings = new();
         private GameObject lastUpdatedCard;
         public GameObject LastUpdateCard => lastUpdatedCard;
@@ -58,7 +55,7 @@ namespace FortuneGame.Managers
 
         private void ConfigureNewCard(PrizeData prizeData, int amount)
         {
-            GameObject newCard = GetNewCard();
+            GameObject newCard = GetNewCardTemplate();
             Earning earning = new Earning
             {
                 EarningCard = newCard,
@@ -73,7 +70,7 @@ namespace FortuneGame.Managers
             SortCards();
         }
 
-        private GameObject GetNewCard()
+        private GameObject GetNewCardTemplate()
         {
             GameObject newCard = ObjectPool.Instance.GetFromPool("EarningCard");
 
@@ -82,7 +79,7 @@ namespace FortuneGame.Managers
             
             newCard.transform.SetParent(transform);
             newCard.transform.localScale = Vector3.one;
-            newCard.transform.position = cardSortStartPos.position;
+            //newCard.transform.position = cardSortStartPos.position;
             
             lastUpdatedCard = newCard;
             return newCard;
